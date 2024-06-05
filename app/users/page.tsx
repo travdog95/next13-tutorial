@@ -11,11 +11,12 @@ const UsersPage = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/users", {
     next: { revalidate: 10 },
   });
+
   const users: User[] = await res.json();
   return (
     <>
       <h1>Users</h1>
-      <table className="table table-bordered">
+      <table className="table table-bordered table-zebra table-pin-rows table-sm">
         <thead>
           <tr>
             <th>Name</th>
